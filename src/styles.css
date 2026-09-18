@@ -1,0 +1,127 @@
+@import "@fontsource-variable/source-sans-3";
+@import "@fontsource-variable/source-serif-4";
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f4efe6;
+  --color-fg: #1c1915;
+  --color-spruce: #2c3b32;
+  --color-brass: #c4a574;
+  --color-dusk: #1a2420;
+  --color-paper: #ebe4d6;
+  --color-cream: #faf7f0;
+  --color-muted: #4a463f;
+  --color-line: #d4ccbe;
+  --color-error: #6b2e24;
+  --font-sans: "Source Sans 3 Variable", "Source Sans 3", system-ui, sans-serif;
+  --font-serif: "Source Serif 4 Variable", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-spruce);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  background: var(--color-spruce);
+  color: var(--color-bg);
+  padding: 0.6rem 1rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.hairline {
+  height: 1px;
+  background: var(--color-line);
+}
+
+.rule-brass {
+  width: 3rem;
+  height: 2px;
+  background: var(--color-brass);
+}
+
+.prose-legal h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.prose-legal p,
+.prose-legal li {
+  color: var(--color-fg);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.prose-legal ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+}
