@@ -2,15 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
   "installCommand": "npm install",
-  "buildCommand": "npm run build",
-  "rewrites": [
-    {
-      "source": "/images/:file*",
-      "destination": "https://raw.githubusercontent.com/jerosano/laatusivut/main/public/images/:file*"
-    },
-    {
-      "source": "/og.jpg",
-      "destination": "https://raw.githubusercontent.com/jerosano/laatusivut/main/public/og.jpg"
-    }
-  ]
+  "buildCommand": "VITE_AUTH_ENABLED=false npx vite build"
 }
